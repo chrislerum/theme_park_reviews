@@ -20,12 +20,15 @@ gem 'carrierwave'
 gem 'money-rails'
 gem 'quiet_assets'
 gem 'pry-rails'
+group :development do
+  gem "spring-commands-rspec"
+  gem 'guard-rspec', require: false
+end
 group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
-  gem 'guard-rspec', '~> 0.7.3'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'thin'
