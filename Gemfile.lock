@@ -284,7 +284,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
-  guard (~> 1.0.1)
+  guard
   guard-rspec
   haml-rails
   jbuilder (~> 1.2)
