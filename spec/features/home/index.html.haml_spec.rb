@@ -7,7 +7,7 @@ describe "home/index.html.haml" do
   end
 
   it "shows the greeting" do
-    expect(page).to have_text "Welcome"
+    expect(page).to have_text "Welcome to Theme Park Reviews!"
   end
 
   context "when not logged in" do
@@ -44,5 +44,25 @@ describe "home/index.html.haml" do
       expect(page).to have_link 'Edit account'
       expect(page).to have_link 'Logout'
     end
+
+    it "lets you log out" do
+      click_link 'Logout'
+      expect(page).to have_text 'Signed out successfully'
+    end
+
+  end
+
+  it "lets you edit your account" do
+    click_link 'Sign up'
+    fill_in 'Email', with: 'hello@gmail.com'
+    fill_in 'Password', with: 'hellobaby'
+    fill_in 'Password confirmation', with: 'hellobaby'
+    click_button 'Sign up'
+    click_link 'Edit account'
+    expect(page).to have_text 'My Account'
+    fill_in 'Email', with: 'newemail@email.com'
+    fill_in 'Current password', with: 'hellobaby'
+    click_button 'Update'
+    expect(page).to have_text 'You updated your account successfully'
   end
 end
