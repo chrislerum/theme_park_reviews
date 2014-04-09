@@ -10,6 +10,10 @@ describe "home/index.html.haml" do
     expect(page).to have_text "Welcome to Theme Park Reviews!"
   end
 
+  it "has a link to home page" do
+    expect(page).to have_link 'Home', href: root_path
+  end
+
   context "when not logged in" do
     it "shows login link" do
       expect(page).to have_link 'Login'

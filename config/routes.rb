@@ -1,4 +1,6 @@
 ThemeParkReviews::Application.routes.draw do
+  resources :theme_parks
+
   get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

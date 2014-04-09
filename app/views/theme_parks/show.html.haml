@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @theme_park.name
+%p
+  %b Description:
+  = @theme_park.description
+%p
+  %b Location:
+  = @theme_park.location
+%p
+  %b Rating:
+  = @theme_park.rating
+
+= link_to 'Edit', edit_theme_park_path(@theme_park)
+\|
+= link_to 'Back', theme_parks_path

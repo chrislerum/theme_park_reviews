@@ -11,6 +11,7 @@
     .row
       .small-6.columns
         Welcome to Theme Park Reviews!
+        = link_to 'Home', root_path
       .small-6.columns.text-right
         = render 'layouts/navigation_links'
     .row
@@ -19,7 +20,7 @@
         %p.alert= alert
     .row
       .small-6.columns{style: 'background-color: #99f;'}
-        hello
+        = link_to 'New Theme Park', new_theme_park_path
       .small-6.columns{style: 'background-color: #9f9;'}
         right
       .small-12.columns{style: 'background-color: white;'}

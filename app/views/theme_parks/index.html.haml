@@ -1,0 +1,25 @@
+%h1 Listing theme_parks
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Location
+    %th Rating
+    %th
+    %th
+    %th
+
+  - @theme_parks.each do |theme_park|
+    %tr
+      %td= theme_park.name
+      %td= theme_park.description
+      %td= theme_park.location
+      %td= theme_park.rating
+      %td= link_to 'Show', theme_park
+      %td= link_to 'Edit', edit_theme_park_path(theme_park)
+      %td= link_to 'Destroy', theme_park, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Theme park', new_theme_park_path
