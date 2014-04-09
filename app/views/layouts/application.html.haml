@@ -8,7 +8,20 @@
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    .row
+      .small-6.columns
+        Welcome
+      .small-6.columns.text-right
+        = render 'layouts/navigation_links'
+    .row
+      .small-12.columns
+        %p.notice= notice
+        %p.alert= alert
+    .row
+      .small-6.columns{style: 'background-color: #99f;'}
+        hello
+      .small-6.columns{style: 'background-color: #9f9;'}
+        right
+      .small-12.columns{style: 'background-color: white;'}
+        = yield
     = javascript_include_tag "application"
