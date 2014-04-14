@@ -9,20 +9,19 @@
     = csrf_meta_tags
   %body
     .row
-      .small-6.columns
-        Welcome to Theme Park Reviews!
-        %br
-        = link_to 'Home', root_path
-      .small-6.columns.text-right
+      .small-6.columns.header
+        =link_to (image_tag 'theme_park_reviews_header.png'), root_path
+      .small-6.columns.header.text-right
         = render 'layouts/navigation_links'
     .row
       .small-12.columns
         %p.notice= notice
         %p.alert= alert
     .row
-      .small-12.columns.links
+      .small-12.columns.links.menu
         %ui.inline-list
           %li= link_to 'New Theme Park', new_theme_park_path
-      .small-12.columns
+      .small-12.columns.main
+        hello
         = yield
     = javascript_include_tag "application"
