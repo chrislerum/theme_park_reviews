@@ -16,7 +16,7 @@ describe "theme_parks/new" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", theme_parks_path, "post" do
       assert_select "input#theme_park_name[name=?]", "theme_park[name]"
-      assert_select "textarea#theme_park_description[name=?]", "theme_park[description]"
+      #assert_select "textarea#theme_park_description[name=?]", "theme_park[description]"
       assert_select "input#theme_park_location[name=?]", "theme_park[location]"
       assert_select "input#theme_park_rating[name=?]", "theme_park[rating]"
     end
