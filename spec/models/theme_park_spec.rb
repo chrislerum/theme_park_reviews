@@ -25,9 +25,9 @@ describe ThemePark do
   it "validates range of rating 1..5" do
     @tp.rating = 10
     @tp.save
-    @tp.errors_on(:rating).should include "must be less than or equal to 5"
+    @tp.errors_on(:rating).should include "must be less than 6"
     @tp.rating = 0
     @tp.save
-    @tp.errors_on(:rating).should include "must be greater than or equal to 1"
+    @tp.errors_on(:rating).should include "must be greater than 0"
   end
 end
