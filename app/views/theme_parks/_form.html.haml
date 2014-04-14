@@ -5,18 +5,26 @@
       %ul
         - @theme_park.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :location
-    = f.text_field :location
-  .field
-    = f.label :rating
-    = f.number_field :rating
+  .row.collapse
+    .small-3.large-2.columns
+      %span.prefix Name
+    .small-9.large-10.columns
+      .field=f.text_field :name
+  .row.collapse
+    .small-3.large-2.columns
+      %span.prefix Description
+    .small-9.large-10.columns
+      .field=f.text_field :description
+  .row.collapse
+    .small-3.large-2.columns
+      %span.prefix Location
+    .small-9.large-10.columns
+      .field=f.text_field :location
+  .row.collapse
+    .small-3.large-2.columns
+      %span.prefix Rating
+    .small-9.large-10.columns
+      .field=f.number_field :rating
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: :button
+
