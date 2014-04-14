@@ -1,0 +1,26 @@
+$light: lightblue;
+$dark: black;
+$normal: blue;
+$bland: #efefef;
+$funky: green;
+
+.header {
+  background-color: $dark;
+  color: white;
+  line-height: 30px;
+  a {
+    color: $light;
+  }
+}
+.sub_header {
+  background-color: $funky;
+  color: $dark;
+}
+.menu {
+  background-color: $light;
+  color: $normal;
+}
+.main {
+  background-color: $bland;
+  min-height: 500px;
+}
