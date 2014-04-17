@@ -1,4 +1,4 @@
-guard :rspec, cmd: 'spring rspec --format doc', all_on_start: true, all_after_pass: true do
+guard :rspec, cmd: 'spring rspec --format progress', all_on_start: true, all_after_pass: true do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -13,9 +13,5 @@ guard :rspec, cmd: 'spring rspec --format doc', all_on_start: true, all_after_pa
 
   # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.haml$})     { |m| "spec/features/#{m[1]}_spec.rb" }
-
-  # Turnip features and steps
-  watch(%r{^spec/acceptance/(.+)\.feature$})
-  watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
