@@ -9,7 +9,7 @@
     = csrf_meta_tags
   %body
     .row
-      .small-6.columns.header
+      .small-4.columns.header
         =link_to (image_tag 'theme_park_reviews_header.png'), root_path
       .small-6.columns.header.text-right
         = render 'layouts/navigation_links'
@@ -22,6 +22,5 @@
         %ui.inline-list
           %li= link_to 'New Theme Park', new_theme_park_path
       .small-12.columns.main
-        hello
         = yield
     = javascript_include_tag "application"
