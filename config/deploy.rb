@@ -1,11 +1,11 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+lock '3.2.0'
 
 set :application, 'theme_park_reviews'
 set :repo_url, 'git@github.com:chrislerum/theme_park_reviews.git'
 
 # Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/my_app'
