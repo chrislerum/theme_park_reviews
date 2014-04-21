@@ -69,6 +69,6 @@ class ThemeParksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def theme_park_params
-      params.require(:theme_park).permit(:name, :description, :location, :rating)
+      params.require(:theme_park).permit(:name, :description, :location, :rating, :theme_park_images_attributes)
     end
 end

@@ -8,7 +8,7 @@ describe "theme_parks/new.html.haml" do
     fill_in :theme_park_description, with: 'talking about disney'
     fill_in :theme_park_location, with: 'Orlando, FL'
     fill_in :theme_park_rating, with: 3
-    click_button 'Save'
+    click_button 'Create Theme park'
     expect(page).to have_content 'Theme park was successfully created'
     expect(page).to have_content 'Disney World Orlando'
   end

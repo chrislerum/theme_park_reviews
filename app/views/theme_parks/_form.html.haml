@@ -1,30 +1,27 @@
 = form_for @theme_park do |f|
-  - if @theme_park.errors.any?
+  -if @theme_park.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@theme_park.errors.count, "error")} prohibited this theme_park from being saved:"
+      %h2
+        =pluralize(@theme_park.errors.count, "error")
+        prohibited this theme park from being saved:
       %ul
-        - @theme_park.errors.full_messages.each do |msg|
-          %li= msg
-  .row.collapse
-    .small-3.large-2.columns
-      %span.prefix Name
-    .small-9.large-10.columns
-      .field=f.text_field :name
-  .row.collapse
-    .small-3.large-2.columns
-      %span.prefix Description
-    .small-9.large-10.columns
-      .field=f.text_field :description
-  .row.collapse
-    .small-3.large-2.columns
-      %span.prefix Location
-    .small-9.large-10.columns
-      .field=f.text_field :location
-  .row.collapse
-    .small-3.large-2.columns
-      %span.prefix Rating
-    .small-9.large-10.columns
-      .field=f.number_field :rating
-  .actions
-    = f.submit 'Save', class: :button
-
+      - @theme_park.errors.full_messages.each do |message|
+        %li= message
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :description
+    = f.text_area :description
+  %p
+    = f.label :location
+    = f.text_field :location
+  %p
+    = f.label :rating
+    = f.text_field :rating
+  %p
+    = f.fields_for :theme_park_images do |ff|
+      = ff.label :title
+      = ff.text_field :title
+  %p
+    = f.submit
