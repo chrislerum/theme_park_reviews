@@ -10,6 +10,13 @@
 %p
   %b Rating:
   = @theme_park.rating
+- if @theme_park.theme_park_images.any?
+  %p
+    %b Photo Title:
+    = @theme_park.theme_park_images.first.title
+  %p
+    %b Photo:
+    = image_tag @theme_park.theme_park_images.first.photo_url
 
 = link_to 'Edit', edit_theme_park_path(@theme_park)
 \|

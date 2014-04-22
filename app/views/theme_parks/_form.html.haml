@@ -21,7 +21,11 @@
     = f.text_field :rating
   %p
     = f.fields_for :theme_park_images do |ff|
-      = ff.label :title
-      = ff.text_field :title
+      %p
+        = ff.label :title
+        = ff.text_field :title
+      %p
+        = ff.label :photo
+        = ff.file_field :photo
   %p
     = f.submit

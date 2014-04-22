@@ -10,6 +10,7 @@ class ThemeParksController < ApplicationController
 
   def new
     @theme_park = ThemePark.new
+    @theme_park.theme_park_images.build
   end
 
   def create
@@ -22,6 +23,6 @@ class ThemeParksController < ApplicationController
   end
 
   def theme_park_params
-    params.require(:theme_park).permit(:name, :description, :location, :rating)
+    params.require(:theme_park).permit(:name, :description, :location, :rating, theme_park_images_attributes: [:photo, :title])
   end
 end
