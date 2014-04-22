@@ -14,8 +14,11 @@ class ThemeParksController < ApplicationController
 
   def create
     @theme_park = ThemePark.new(theme_park_params)
-    @theme_park.save
-    redirect_to @theme_park, notice: 'Theme park was successfully created.'
+    if @theme_park.save
+      redirect_to @theme_park, notice: 'Theme park was successfully created.'
+    else
+      render :new
+    end
   end
 
   def theme_park_params
