@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419215142) do
+ActiveRecord::Schema.define(version: 20140425152555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20140419215142) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "ratings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "theme_park_id"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["theme_park_id"], name: "index_ratings_on_theme_park_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+
   create_table "theme_park_images", force: true do |t|
     t.integer  "theme_park_id"
     t.string   "photo"
@@ -61,7 +72,6 @@ ActiveRecord::Schema.define(version: 20140419215142) do
     t.string   "name"
     t.text     "description"
     t.string   "location"
-    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

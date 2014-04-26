@@ -8,7 +8,6 @@ describe "theme_parks/new.html.haml" do
       fill_in :theme_park_name, with: 'Disney World Orlando'
       fill_in :theme_park_description, with: 'talking about disney'
       fill_in :theme_park_location, with: 'Orlando, FL'
-      fill_in :theme_park_rating, with: 3
     end
 
     it "allows user to create a new theme park" do

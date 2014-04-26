@@ -1,5 +1,7 @@
 ThemeParkReviews::Application.routes.draw do
-  resources :theme_parks
+  resources :theme_parks do
+    resources :ratings
+  end
 
   get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -11,6 +13,7 @@ ThemeParkReviews::Application.routes.draw do
   root 'home#index'
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
+  #get "theme_parks/rating", as: 'new_rating'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

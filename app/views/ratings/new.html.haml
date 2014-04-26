@@ -1,0 +1,5 @@
+= "Rate #{@rating.theme_park.name} here!"
+= form_for @rating, url: {action: "create"} do |f|
+  = f.label :rating
+  = f.text_field :rating
+  = f.submit

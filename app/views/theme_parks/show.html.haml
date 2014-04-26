@@ -1,4 +1,6 @@
 %p
+  = link_to 'Rate this theme park', new_theme_park_rating_path(@theme_park)
+%p
   %b Name:
   = @theme_park.name
 %p
@@ -8,8 +10,8 @@
   %b Location:
   = @theme_park.location
 %p
-  %b Rating:
-  = @theme_park.rating
+  %b Average Rating:
+  = @theme_park.average_rating
 - if @theme_park.theme_park_images.any?
   %p
     %b Photo Title:

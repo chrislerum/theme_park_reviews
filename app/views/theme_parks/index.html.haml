@@ -5,21 +5,17 @@
     %th Name
     %th Description
     %th Location
-    %th Rating
+    %th Average Rating
     %th First Photo
-    %th
-    %th
     %th
 
   - @theme_parks.each do |theme_park|
     %tr
-      %td= theme_park.name
+      %td= link_to theme_park.name, theme_park
       %td= theme_park.description
       %td= theme_park.location
-      %td= theme_park.rating
-      %td= image_tag theme_park.theme_park_images.first.photo if theme_park.theme_park_images.any?
-      %td= link_to 'Show', theme_park
+      %td{id: "theme_park_number_#{theme_park.id}"}= theme_park.average_rating
+      %td= image_tag theme_park.theme_park_images.first.photo.thumb if theme_park.theme_park_images.any?
       %td= link_to 'Edit', edit_theme_park_path(theme_park)
-      %td= link_to 'Destroy', theme_park, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 = link_to 'New Theme park', new_theme_park_path
