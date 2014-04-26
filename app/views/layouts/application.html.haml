@@ -21,6 +21,7 @@
       .small-12.columns.links.menu
         %ui.inline-list
           %li= link_to 'New Theme Park', new_theme_park_path
+          %li= link_to 'List Theme Parks', theme_parks_path
       .small-12.columns.main
         = yield
     = javascript_include_tag "application"
