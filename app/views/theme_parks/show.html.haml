@@ -1,4 +1,7 @@
 %p
+  %iframe{width: "600", height: "450", frameborder: "0", style: "border:0", src: "https://www.google.com/maps/embed/v1/place?q=#{@theme_park.location}&key=AIzaSyAoleiqkcFTzIIhJUVBUWaeXhn-AvIoKQ4"}
+
+%p
   = link_to 'Rate this theme park', new_theme_park_rating_path(@theme_park)
 %p
   %b Name:
